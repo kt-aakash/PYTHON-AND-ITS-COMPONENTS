@@ -1,0 +1,296 @@
+                                                :Intro:
+                                               ---------
+
+1) Its a general purpose language
+
+2) Being used in:
+    -> ML
+    -> GUI
+    -> Software Dev
+    -> Web Dev
+
+3) Python(came in 1989, by Guido Van Rossum) is an INTERPRETED, OBJECT-ORIENTED, HIGH-LEVEL language
+
+4) Python 3.x isn't backward compatible with Py 2.x
+
+------------------------------------------------------------------------------------------------------------
+
+5) Strings are immutable in Python
+
+6) Tuple() unlike lists[]  is immutable which also makes iteration in tuples() faster
+
+7) Set{} on other hand doesn't print out elements in any particular sequence\(because it uses hash because of which its faster too). It removes the duplicate values.
+
+8) dictionaries{} is a key-value pair collection. 
+    -> Using dict(zip(keylist,valuelist)), a dictionary can easily be created
+    -> They are also refered as Maps
+     
+------------------------------------------------------------------------------------------------------------------
+
+9) To find the address of a variable, id(var) can be used.
+    -> Also, in  Python if two variables have the same value, then they are made to point to the same address 
+
+
+10) Python doesn't allow CONSTANT values
+
+11) type(var) is used to know the datatype of a variable
+
+12) NONE is use instead of NULL in Python
+
+13) To represent complex numbers -> a+bj format to be used
+
+14) datatype(var) -> Ex: int(var) used for datatype coversion
+
+15) range(0, 9) -> is a sequence datatype to define the elements from  0 to 9 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+16) bin(num) -> coverts the number to binaray formart usually represented as 0bnum
+    -> 0b in front represents that  its a binary format
+
+17) Similarly:
+    -> oct(num) gives 0onum ocatal format
+    -> hex(num) gives 0xnum hexadecimal format 
+
+18) BITWISE operators:
+    -> ~num - gives compliment of num
+    -> in memory, the negative numbers are stored in 2's compliment format
+    -> a^b - exor operation
+    -> a<<b - left shift operation (shifting by 'b' bits)
+    -> a>>b - right shit operation (shifting by 'b' bits)
+
+ 19) input() by default converts values into Strings
+    -> we can also do something like 
+        ch = input("Enter value")[0]  -> there by taking in only the value of the first character
+    -> ch = eval(input("Enter a expression"))  - directly evaluates an expression entered by the user
+
+
+20) print("", end="") can be use to avoid newline
+
+21) pass :  Used when there is to command statement to be executed or when we just want to  declare a class or a function without a definition.
+
+22) for-else loop exists in Python
+
+23) To use arrays in python, 
+    -> import array
+    -> vals = array(datatype, values)
+    -> Doesnt ajllow multidimentional arrays
+
+24) numpy, a third party package , is used for multidimentioal array calculations
+    -> unlinke array package, the array() in numpy doesn't require mention of datatype, but there is an option though
+
+25) There is a huge difference between
+    
+    import numpy as np -> np.func() format to be used by default when using the methods belonging to the module    
+    
+    from numpy import * -> the functions can be used directly but can pollute the namespace
+
+26)  An array in numpy can be created in multiple ways
+    -> np.array(list of values)
+    -> np.linespace(start, end\(inclusive), no : of parts \(by default: 50 parts) )
+    -> np.logspace(start, end\(inclusive), no : of parts \(by default: 50 parts))  #something to do with logspace
+    -> np.zeros(size, dtype) 
+    -> np.ones(size, dtype)   #initialing  arra with defaut values as 0's and 1's respectively
+     
+27) In numpy
+    -> arr + n      -     adds n to all the elements of an array
+    -> arr1 + arr2  -     adds the respective index arrays(vectorised operation) but then arrs must be of same size
+    -> sin(arr), log(arr), etc  -   operation performed on individual elements
+
+28) Copying arrays
+    -> arr1 = arr2      -   assigns both arr1 and arr2 with the address of arr2
+    -> arr1 = arr2.view()   -   the values will be same but different addresses     #shallow copy - changing an element in any of the arrays results in the change in both arrays
+    -> arr1 = arr2.copy()   -   different addresses, #DeepCopy, isn't interconnected in any ways
+
+29) -> To know the dimensions of the array we are working with, use : arr.ndim
+    -> To know the datatype of the array we are working with, use : arr.dtype
+    -> arr.shape - gives number of rows and columns
+    -> arr.size - gives number of elements in the array
+    -> arr2 = arr1.flatten() - converts a 2D array into 1D array
+    -> arr3 = arr2.reshape(3,4) - coverts the array into an array with 3 rows and 4 columns
+    -> arr3 = arr2.reshape(2,3,4) - converts the array intp a 3D array with 2 2D arrays each having 3 rows and 4 columns
+
+30) -> To convert an array into a matrix, m = matrix(arr)
+    -> We can also do something like  :  m = matrix('1 2 3; 4 5 6; 7 8 9') 
+    -> print(np.diagoanl(m))
+    -> m.min()
+    -> m.max()
+    -> Multiplication of matrices
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+40) The functions in Python are neither PassByValue nor PassByRef
+    -> While passing the arguments, they they ref to the same address but once the value is changed, they both have diff addresses
+    -> If Lists are passed, since they are mutable, they continue having the same addresses
+    -> Functions can very well be assigned to a variable 
+        -> f = func
+            -> If we use fun(), it means we are calling the function
+
+41) Types of arguments for functions:
+    -> positions - following the sequence in the func default
+    -> Keyword type 
+        -> person(age=28, name="K T") - followed when parameters are known but not the sequence
+    -> default type
+        -> mention a default val in func def, passing just other val without all would still work
+    -> variable length type
+        -> in func def mention def sum(a, *b)
+        -> b is accepted as tuple
+    -> keyword variable arguments
+        -> def sum(a, **b) - mmetion both key and value
+
+42) global var is used to  refer to the global var and not the one local
+
+43) x  =  globals()['var name']  - globals() function is used to refer to all the global variables present
+
+44) print("Even count  :   {} and Odd count :   {}".format(var1,var2))
+
+45) for one statement functions, we can use lambda functions
+    -> functions can also be passed into functions
+    -> f = lambda a : a*a
+    -> lambda functions can take multiple args but solves only one expression
+
+46) -> list(filter(func,list)) - used to fliter desired values from a given list
+    -> list(map(func,list)) - used to apply a certain operation on all the values in a given list
+    -> reduce(lambda x,y:operation, list)   -   used to conduct an operation on the list take two elements at a time and return a single value
+        -> import functools to use reduce()
+
+47) Python also supports Functional Programming
+    -> Decorators are functions used to change the behaviour for other functions whose definition is known
+        -> They add additional features to an eisting function without even manipulating the def of that particular function
+        -> This happens during compile time
+    -> The process of using decorator involves three functions
+        -> Outer - returns inner function
+        -> inner - calls original function in the return statement 
+        -> Original function
+    -> using @outerfunction_name on the original function doess the job of assignment
+        -> Now we can directly call the function
+
+
+48) __name__ is a special variable in python which refers to the main module, and module name in sub modules
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                            CLASSES AND OBJECTS
+
+49) lets say, we have a class Car
+    -> c = Car()        #Initializing an obejct of a class
+    -> The methods can be used in two ways
+        -> Car.method(c)
+        -> c.method()
+    -> It is mandatory to pass \"self" in  all the method definintions
+    -> __init__() - the constructor method of a class
+    -> Class variables are directly declared through constructors
+
+
+50) -> Objects are created in heap memory 
+    -> The object's size varies depending on its variables which is kept in track by the constructor
+    -> We don't have a ternary operator in Python3, instead we us sigle line conditional
+        -> True if <condition> else False
+        -> Statment1 if <condition> else Statement2
+
+51) namespace is an area where we create and store an object/variable
+    -> Class variables / static variables are stored in class namespace
+        -> Class variables are common for all objects
+    -> Instance/object variables are stored in object namespace  
+
+52) Types of methods in a Class:
+    -> Instance methods
+        -> Accessors    -   just for fetching results   Ex: get()
+        -> Mutators     -   for modifying the data      Ex: set()
+    -> Class methods
+        -> instead of "self", "cls" arg is passed
+        -> Commom for all the objects
+        -> Class_name.method()
+        -> Used to access class variables
+        -> Usong @classmethod decorator is a compulsion
+        -> Can also be called with objects
+    -> Static methods
+        -> A method which is neither related to a class nor an object variables 
+        -> @staticmethod decorator to be used
+        -> can be called both by object and class name
+        -> cannot use class variables
+
+53) Nested classes
+    -> The object of the nested class must be declared in the constructer of the parent class using self.classname()
+    -> It can also be declared outside using Classname.sub_classname()
+
+54) Inheritance
+    -> Python3 supports Multiple, single level and multilevel Inheritance
+    -> class B(A) in class def is the synta to be followed
+    -> super().__init__()   - used to call the constructor of the parent class along with that of the current class. This is to be declared in the constuctor of the sub class
+    -> mro\(method resolution order), resolves the priorites of constructors in multiple Inheritance (from left to right)
+    -> super() can be used to refer to the parent class methods and call them 
+    -> if mro is unable to resolve the issue, it throws an error
+
+56) Polymorphisam : The property of objects to exhibit multiple behaviours 
+
+57) Types of implementations of Polymorphisam:
+    -> Duck Typing - the obejct can have different class attributions from time to time, but its works fine till it has its corresponding methods. This is similar to overriding the methods of the inherited class
+    -> Operator overloading
+        -> Allowed in python
+    -> method overloading                   
+        -> Same name, different arguments
+        -> Not available in python
+    -> method overriding
+        -> methods with same name and same parameters but different functionality 
+
+
+58) Python doesnt support abstract classes by default
+    -> It uses abc module to create abstract classes
+    -> from abc import ABC, abstractmethod
+    
+59) Iterator class converts a list into an object there by giving elements on at a time
+    -> lst2 = iter(lst)
+    -> we can create our own iterator by overiding __iter__ and __next__ methods
+
+60) Generators are better alternatives to iterators
+    -> We just need to override a function and not the whole class
+    -> yield is the Keyword to transform the iterator to a generator. It is used instead of a return statement
+    -> yield returns a generator object
+    -> unlike return, we can write multiple yield statement
+    -> we can also write statements after yiled. It doesnt need to be the final statement
+
+61) Exceptonal handling is essential to prevent the application from crashing due to a minor error
+    -> Whenever we open a resource, we must make sure to close it even when the exception occurs.
+        -> Generally this statement in given in finally block
+        -> A finally blocks get executed irres[ecive of exception occurance
+    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+62) Multithreading
+    -> from threading import *
+    -> Inherit Thread into the classes which requires to use threads
+    -> override run() method with required functionality
+    -> obj_of_class.start() to begin the thread
+    -> for better understanding of execution, sleep() can be used form time module
+    -> when threads are created, the form seperate branches from the main() thread.
+    -> obj.join() is used to ask main() to wait for that sub thread to join before it executes
+
+62) File Handling
+    -> used to store data permanently unlike in variables
+    -> Files are the simplest way to store data. Apart from this, we have databases
+    -> mode of operation must be mentioned
+        -> if its 'w', it deletes all the existing contents and write the data
+        -> if 'a', it just appends
+        -> if 'r', it just reads
+    -> Since a pointer is involed in this process, if any of the data is pointed already, the pointer just continues from that point
+    -> If the file is an .img file or any other non text file, the mode while opening should be rb
+        -> f = open('filename', 'rb')  - rb is "read binary"
+        -> f = open('filename', 'wb')  - wb is "write binary"
+    -> f3 = open(r"C:\Users\ktaak\Desktop\Untitled",'rb')
+        -> prefix r before the address of the file location to avoid errors due to '\'
+    ->f.close() to close the file
+
+63) Using ''' or """ for commenting isn't a  good practice since its used for Documentation.
+    Hence the best practice is to use # itself
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+64) Python is both compiled(by pycompiler to convert it into byte code ) and interpreted(by PVm into machine code) 
+    -> Byte code is used for portability
+    -> We are using Cpython implementation
+        -> we also have Jpython, Ironpython(dot net)
+
+
+
+65) Back-tracking algorithm uses Recursion at its core 
