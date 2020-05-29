@@ -200,3 +200,14 @@ solve()
 print(np.matrix(sudoku_grid))
 
 #------------------------------------------------------------------------------#
+
+                                    #Recursion
+                                    ----------
+
+def factorial(n):
+    if n>1 :
+       return n*factorial(n-1)
+    print(n) 
+    return n    
+
+print(factorial(5))
