@@ -211,3 +211,20 @@ def factorial(n):
     return n    
 
 print(factorial(5))
+
+
+#Tower of Hanoi Problem
+
+def move(f,t):
+    print("Moved disc from {} to {}!".format(f,t))
+
+
+def Hanoi(n,f,h,t):
+    if n==0:
+        pass
+    else:
+        Hanoi(n-1,f,t,h)
+        move(f,t)
+        Hanoi(n-1,h,f,t)
+
+Hanoi(n,"A","B","C")
