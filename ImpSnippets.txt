@@ -213,7 +213,7 @@ def factorial(n):
 print(factorial(5))
 
 
-#Tower of Hanoi Problem
+-------------------#Tower of Hanoi Problem
 
 def move(f,t):
     print("Moved disc from {} to {}!".format(f,t))
@@ -228,3 +228,20 @@ def Hanoi(n,f,h,t):
         Hanoi(n-1,h,f,t)
 
 Hanoi(n,"A","B","C")
+
+#-----------------------My solution to tower of hanoi--------------------------
+def move(f,t):
+    print("Move from {} to {}".format(f,t))
+
+def hanoi(n,A,B,C):
+    if n<=0:
+        pass
+    else:
+        hanoi(n-1,A,C,B)
+        move(A,C)
+        hanoi(n-1,B,A,C) 
+
+
+hanoi(2,'A','B','C')
+
+NOTE: Whenever you feel that a certain problem could be solved provided a small version of it is taken, most probably, recursion is involved
