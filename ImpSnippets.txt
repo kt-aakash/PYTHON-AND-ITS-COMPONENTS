@@ -245,3 +245,19 @@ def hanoi(n,A,B,C):
 hanoi(2,'A','B','C')
 
 NOTE: Whenever you feel that a certain problem could be solved provided a small version of it is taken, most probably, recursion is involved
+
+--------------------------#fibonacci using recursion--------------------------
+
+def fibo(i):
+    if(i<=1):
+        return i
+    return fibo(i-2)+fibo(i-1)
+
+def fiboPrint(n):
+    for i in range(0,n):
+        print(fibo(i),end=" ")
+        i+=1
+
+fiboPrint(5)
+############################################################################################
+
